@@ -1,0 +1,44 @@
+# 🚀 Archivos de Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.sqlite3
+db.sqlite3
+
+# 🚀 Virtual environments (Evita subir el entorno virtual)
+venv/
+.venv/
+env/
+.env/
+
+# 🚀 Archivos de configuración sensibles (Variables de entorno)
+.env
+.env.local
+.env.development
+.env.production
+*.secret
+config.yaml
+
+# 🚀 Dependencias de Python
+pip-log.txt
+pip-delete-this-directory.txt
+poetry.lock
+
+# 🚀 Archivos de logs y debugging
+logs/
+*.log
+debug.log
+
+# 🚀 Archivos de caché y compilación
+.mypy_cache/
+.pytest_cache/
+.coverage
+.cache/
+.tox/
+htmlcov/
+
+# 🚀 Carpetas de distribución y build
+dist/
+build/
+site/
