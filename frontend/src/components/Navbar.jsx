@@ -27,7 +27,7 @@ export default function Navbar() {
     return (
         <header className="bg-gray-950">
             <nav className={`pb-5 md:text-sm ${state ? "absolute z-20 top-0 inset-x-0 bg-gray-800 rounded-xl mx-2 mt-2 md:mx-0 md:mt-0 md:relative md:bg-transparent" : ""}`}>
-                <div className="gap-x-14 items-center max-w-screen-xl mx-auto px-4 md:flex md:px-8">
+                <div className="gap-x-14 items-center max-w-screen mx-auto px-4 md:flex md:px-8">
                     {/* LOGO */}
                     <div className="flex items-center justify-between py-5">
                         <div className="flex items-center transform transition-transform duration-300 hover:scale-110">
@@ -55,7 +55,7 @@ export default function Navbar() {
 
                     {/* MENÚ */}
                     <div className={`flex-1 items-center mt-8 md:mt-0 md:flex ${state ? 'block' : 'hidden md:block'} `}>
-                        <ul className="flex-1 justify-end items-center space-y-6 md:flex md:space-x-6 md:space-y-0">
+                        <ul className="flex-1 justify-end items-center space-y-6 md:flex md:space-x-8 md:space-y-0">
                             {navigation.map((item, idx) => (
                                 <li key={idx} className="text-gray-300 hover:text-gray-400">
                                     <button onClick={() => navigate(item.path)} className="block">
@@ -63,11 +63,11 @@ export default function Navbar() {
                                     </button>
                                 </li>
                             ))}
-                            <li>
+                            <li className="">
                                 {!isHidden && (
                                     <button
                                         onClick={handleNavigation}
-                                        className="transform transition-transform duration-300 hover:scale-110 flex items-center justify-center gap-x-1 py-2 px-4 text-white font-medium bg-gradient-to-r from-purple-600 to-pink-600 hover:bg-sky-400 active:bg-sky-600  rounded-full md:inline-flex"
+                                        className="transform  transition-transform duration-300 hover:scale-110 flex items-center justify-center gap-x-1 py-2 px-4 text-white font-medium bg-gradient-to-r from-purple-600 to-pink-600 hover:bg-sky-400 active:bg-sky-600  rounded-full md:inline-flex"
                                     >
                                         Get started
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">

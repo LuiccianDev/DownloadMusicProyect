@@ -1,11 +1,10 @@
 import { useNavigate } from "react-router-dom";
 
-export default () => {
+const Home = () =>{
     const navigate = useNavigate()
 
     return (
         <div className="bg-gray-950">
-            
             <section className="relative">
                 <div className="relative z-10 max-w-screen-xl mx-auto px-4 py-28 md:px-8">
                     <div className="space-y-5 max-w-4xl mx-auto text-center py-30">
@@ -52,3 +51,5 @@ export default () => {
         </div>
     )
 }
+
+export default Home

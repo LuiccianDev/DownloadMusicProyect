@@ -2,10 +2,10 @@ import React from "react";
 
 export default function Footer() {
     return (
-        <div className="w-full min-h-screen flex items-center justify-center bg-gray-950 ">
-            <div className="lg:w-2/3 w-full  text-white flex flex-col ">
-                <div className="w-full text-4xl font-bold">
-                    <h1 className="w-full md:w-2/3">How can we help you. get in touch</h1>
+        <div className="w-full flex items-center justify-center bg-gray-950 pt-35">
+            <div className="mx-10 sm:mx text-white flex flex-col ">
+                <div className="w-full text-2xl lg:text-xl font-bold">
+                    <h1 className="w-full ">How can we help you. get in touch</h1>
                 </div>
                 <div className="flex mt-8 flex-col md:flex-row md:justify-between">
                     <p className="w-full md:w-2/3 text-gray-400">
@@ -29,7 +29,6 @@ export default function Footer() {
                         <a href="/About" className="hidden md:block cursor-pointer text-gray-600 hover:text-white uppercase">
                             About
                         </a>
-                        
                         <a  href="/Why-us" className="hidden md:block cursor-pointer text-gray-600 hover:text-white uppercase">
                             Why us
                         </a>
