@@ -1,8 +1,9 @@
 from fastapi import APIRouter, BackgroundTasks
 from fastapi.responses import FileResponse
-from services.download_services import descargar_musica, delete_file
-from schema.download_schema import RequestDownload
-from utils.logger_utils import logger
+from app.services.download_services import descargar_musica, delete_file
+from app.schema.download_schema import RequestDownload
+from app.utils.logger_utils import logger
+
 download_router = APIRouter()
 
 

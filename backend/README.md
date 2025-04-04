@@ -11,16 +11,28 @@ backend/
 ├── app/
 │   ├── main.py          # Archivo principal para iniciar el servidor FastAPI
 │   ├── routes/          # Rutas de la API
+│   │   ├── __init__.py  # Inicialización del módulo de rutas
+│   │   └── download.py     # Rutas relacionadas con la descarga de música
 │   ├── services/        # Lógica de negocio y servicios
+│   │   ├── __init__.py  # Inicialización del módulo de servicios
+│   │   └── downloader_services .py # Servicio para manejar la descarga de música
 │   ├── utils/           # Utilidades y funciones auxiliares
+│   │   ├── __init__.py  # Inicialización del módulo de utilidades
+│   │   └── logger_utils.py   # Funciones auxiliares
 │   └── models/          # Modelos de datos
-├── requirements.txt     # Dependencias del proyecto
+│       ├── __init__.py  # Inicialización del módulo de modelos
+│       └── music.py     # Modelo de datos para la música
+├── pyroject.toml        # Dependencias del proyecto
+├── uv.lock              # Archivo de dependencia abslutos
 └── README.md            # Documentación del proyecto
 ```
 
 ## Instalación
 
 Sigue estos pasos para instalar y configurar el proyecto:
+
+Instala el empaquetador uv para inicializar el proyecto desde su repositorio oficial:  
+[https://github.com/astral-sh/uv](https://github.com/astral-sh/uv)
 
 1. Clona este repositorio en tu máquina local:
    ```bash

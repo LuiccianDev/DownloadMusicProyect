@@ -2,12 +2,21 @@ import yt_dlp
 import pathlib
 import os
 import re
-from utils.logger_utils import logger
+import shutil
+from app.utils.logger_utils import logger
 
 # Carpeta donde se guardarán los archivos temporalmente
 OUTPUT_FOLDER = pathlib.Path("temp")
 OUTPUT_FOLDER.mkdir(parents=True, exist_ok=True)
-
+def check_ffmpeg_installed() -> bool:
+    """
+    Verifica si ffmpeg está instalado y en el PATH.
+    Retorna True si se encuentra, False en caso contrario.
+    """
+    if shutil.which("ffmpeg") is None:
+        logger.error("ffmpeg no se encontró. Asegúrate de que ffmpeg esté instalado y en el PATH.")
+        return False
+    return True
 
 def validar_url(url: str) -> bool:
     """Valida la URL de YouTube y evita listas de reproducción."""
@@ -28,6 +37,10 @@ def descargar_musica(url: str, filename: str) -> str:
     """Descarga la música desde YouTube con validaciones."""
     if not validar_url(url):
         logger.error("URL no válida o lista de reproducción.")
+        return None
+    
+    # Verificar que ffmpeg esté instalado para realizar la conversión
+    if not check_ffmpeg_installed():
         return None
 
     output_template = str(OUTPUT_FOLDER / f"{filename}.%(ext)s")
