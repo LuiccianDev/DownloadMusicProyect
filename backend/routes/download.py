@@ -5,6 +5,7 @@ from schema.download_schema import RequestDownload
 
 download_router = APIRouter()
 
+
 @download_router.post("/download")
 async def download(request: RequestDownload, background_tasks: BackgroundTasks):
     url = request.url
@@ -16,13 +17,13 @@ async def download(request: RequestDownload, background_tasks: BackgroundTasks):
     if not file_path:
         return {"message": "Error al descargar la música"}
 
-    
-
     # Función para eliminar el archivo después de enviarlo
 
     background_tasks.add_task(delete_file, file_path)
-    
+
     # Enviar el archivo y eliminarlo después
-    response = FileResponse(file_path, media_type="audio/mpeg", filename=f"{filename}.mp3")
+    response = FileResponse(
+        file_path, media_type="audio/mpeg", filename=f"{filename}.mp3"
+    )
 
     return response

@@ -1,0 +1,9 @@
+{
+	"files.exclude": {
+		"**/*__pycache__": true,
+		"**/*__init__.py": true,
+		"**/*.log": true,
+		"**/*.tmp": true,
+		"**/test": true
+	}
+}
