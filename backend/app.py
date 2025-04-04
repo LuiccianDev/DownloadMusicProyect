@@ -11,7 +11,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:5173"],  # React en Vite usa este puerto
     allow_credentials=True,
-    allow_methods=["*"],  # Permitir todos los métodos (GET, POST, etc.)
+    allow_methods=["POST"],  # Permitir todos los métodos (GET, POST, etc.) con "*"
     allow_headers=["*"],  # Permitir todos los encabezados
 )
 if __name__ == "__main__":

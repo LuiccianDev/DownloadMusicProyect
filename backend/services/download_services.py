@@ -27,6 +27,7 @@ def validar_url(url: str) -> bool:
 def descargar_musica(url: str, filename: str) -> str:
     """Descarga la música desde YouTube con validaciones."""
     if not validar_url(url):
+        logger.error("URL no válida o lista de reproducción.")
         return None
 
     output_template = str(OUTPUT_FOLDER / f"{filename}.%(ext)s")
@@ -65,7 +66,7 @@ def descargar_musica(url: str, filename: str) -> str:
         return str(final_path) if os.path.exists(final_path) else None
 
     except yt_dlp.utils.DownloadError as e:
-        logger.warning(f"⚠️ Error en la descarga: {e}")
+        logger.warning(f"Error en la descarga: {e}")
         return None
 
 
@@ -73,9 +74,9 @@ def delete_file(file_path: str):
     """Elimina solo el archivo descargado sin borrar la carpeta ni archivos temporales."""
     try:
         if os.path.exists(file_path):
-            os.remove(file_path)  # ✅ Borra solo el archivo de música final
-            logger.info(f"🗑️ Archivo eliminado: {file_path}")
+            os.remove(file_path)  # Borra solo el archivo de música final
+            logger.info(f"Archivo eliminado: {file_path}")
         else:
-            logger.info(f"⚠️ El archivo no existe: {file_path}")
+            logger.info(f"El archivo no existe: {file_path}")
     except Exception as e:
-        logger.exception(f"⚠️ Error al eliminar el archivo: {e}")
+        logger.exception(f"Error al eliminar el archivo: {e}")

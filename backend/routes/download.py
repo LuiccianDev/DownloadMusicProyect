@@ -2,7 +2,7 @@ from fastapi import APIRouter, BackgroundTasks
 from fastapi.responses import FileResponse
 from services.download_services import descargar_musica, delete_file
 from schema.download_schema import RequestDownload
-
+from utils.logger_utils import logger
 download_router = APIRouter()
 
 
@@ -20,6 +20,9 @@ async def download(request: RequestDownload, background_tasks: BackgroundTasks):
     # Función para eliminar el archivo después de enviarlo
 
     background_tasks.add_task(delete_file, file_path)
+    
+    
+    logger.info(f"Archivo descargado y listo para enviar: {file_path}")
 
     # Enviar el archivo y eliminarlo después
     response = FileResponse(
