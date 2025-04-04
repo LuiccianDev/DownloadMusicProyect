@@ -31,7 +31,7 @@ backend/
 
 Sigue estos pasos para instalar y configurar el proyecto:
 
-Instala el empaquetador uv para inicializar el proyecto desde su repositorio oficial:  
+Instala el empaquetador uv para inicializar el proyecto desde su repositorio oficial para obtner la documetacion oficila  de uso del empaquetador :  
 [https://github.com/astral-sh/uv](https://github.com/astral-sh/uv)
 
 1. Clona este repositorio en tu máquina local:
@@ -42,13 +42,19 @@ Instala el empaquetador uv para inicializar el proyecto desde su repositorio ofi
 
 2. Crea un entorno virtual (opcional pero recomendado):
    ```bash
-   python -m venv venv
+   uv venv
    source venv/bin/activate  # En Windows: venv\Scripts\activate
    ```
 
 3. Instala las dependencias necesarias:
    ```bash
-   pip install -r requirements.txt
+   uv pip install -r requirements.txt
+   ```
+4. Inicializar proyecto:
+   ```bash
+   uv sync
+   uv lock
+   uv tree
    ```
 
 ## Cómo ejecutar el servidor
@@ -57,7 +63,7 @@ Instala el empaquetador uv para inicializar el proyecto desde su repositorio ofi
 
 2. Ejecuta el servidor FastAPI:
    ```bash
-   uvicorn app:app --reload
+   uvicorn app.main:app --reload o uv run uvicorn app.main:app --reload
    ```
 
 3. El servidor estará disponible en `http://127.0.0.1:8000`. Puedes acceder a la documentación interactiva de la API en:
