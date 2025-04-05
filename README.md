@@ -1,16 +1,6 @@
 # DownloadMusic
 
 ## Descripción
-<<<<<<< HEAD
-Este proyecto permite a los usuarios descargar música desde diversas fuentes de manera sencilla y eficiente.
-
-## Backend
-El backend está desarrollado en Python y utiliza las siguientes tecnologías:
-- **Flask**: Para la creación de la API REST.
-- **SQLAlchemy**: Para la gestión de la base de datos.
-- **Requests**: Para realizar solicitudes HTTP a las fuentes de música.
-- **Celery**: Para la gestión de tareas en segundo plano.
-=======
 Este proyecto permite a los usuarios descargar música desde diversas fuentes de manera sencilla y eficiente. Está diseñado para ser fácil de usar, con una interfaz intuitiva y un backend robusto que garantiza un rendimiento óptimo.
 
 ### Vista Previa
@@ -26,42 +16,36 @@ Antes de comenzar, asegúrate de tener lo siguiente instalado en tu sistema:
 - **Redis**: Para la gestión de tareas en segundo plano con Celery.
 
 ## Backend
-El backend está desarrollado en Python y utiliza tecnologías modernas para garantizar escalabilidad y seguridad. Además de las funcionalidades básicas, el backend incluye:
-- **Validación de datos**: Para garantizar la integridad de la información.
-- **Gestión de errores**: Manejo adecuado de errores para mejorar la experiencia del usuario.
-- **Soporte para múltiples plataformas**: Permite la integración con diversas fuentes de música.
->>>>>>> inproved-code
+El backend está desarrollado en Python y utiliza las siguientes tecnologías:
+- **Flask**: Para la creación de la API REST.
+- **SQLAlchemy**: Para la gestión de la base de datos.
+- **Requests**: Para realizar solicitudes HTTP a las fuentes de música.
+- **Celery**: Para la gestión de tareas en segundo plano.
 
 ### Funcionalidades del Backend
 - Gestión de usuarios y autenticación.
 - Búsqueda y descarga de música desde diferentes plataformas.
 - Almacenamiento de información en una base de datos.
 - Procesamiento de tareas en segundo plano para descargas.
+- Validación de datos para garantizar la integridad de la información.
+- Gestión de errores para mejorar la experiencia del usuario.
+- Soporte para múltiples plataformas de música.
 
 ## Frontend
-<<<<<<< HEAD
 El frontend está desarrollado utilizando las siguientes tecnologías:
 - **React**: Para la creación de la interfaz de usuario.
 - **Axios**: Para la comunicación con el backend.
 - **Bootstrap**: Para el diseño responsivo y estilización.
-=======
-El frontend ofrece una experiencia de usuario fluida y atractiva. Está diseñado para ser responsivo y accesible desde cualquier dispositivo. Además de las funcionalidades básicas, incluye:
-- **Notificaciones en tiempo real**: Para informar al usuario sobre el progreso de las descargas.
-- **Filtros avanzados**: Para refinar las búsquedas de música.
-- **Soporte multilenguaje**: Permite cambiar el idioma de la interfaz.
->>>>>>> inproved-code
 
 ### Funcionalidades del Frontend
 - Interfaz intuitiva para buscar y descargar música.
 - Visualización del historial de descargas.
 - Gestión de la cuenta del usuario.
+- Notificaciones en tiempo real para informar sobre el progreso de las descargas.
+- Filtros avanzados para refinar las búsquedas de música.
+- Soporte multilenguaje para cambiar el idioma de la interfaz.
 
 ## Instalación
-<<<<<<< HEAD
-1. Clona este repositorio.
-2. Configura el entorno virtual para el backend y las dependencias del frontend.
-3. Sigue las instrucciones específicas en los directorios `backend` y `frontend`.
-=======
 1. **Clona este repositorio**:
    ```bash
    git clone https://github.com/tu-usuario/DownloadMusic.git
@@ -111,14 +95,9 @@ El frontend ofrece una experiencia de usuario fluida y atractiva. Está diseñad
      flask run
      ```
    - Accede a la aplicación en tu navegador en `http://localhost:3000`.
->>>>>>> inproved-code
 
 ## Contribuciones
 Las contribuciones son bienvenidas. Por favor, abre un issue o envía un pull request.
 
-<<<<<<< HEAD
-=======
 ## Licencia
 Este proyecto está licenciado bajo la [MIT License](LICENSE). Siéntete libre de usarlo y modificarlo según tus necesidades.
-
->>>>>>> inproved-code
