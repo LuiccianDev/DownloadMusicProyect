@@ -2,6 +2,21 @@
 
 Este proyecto utiliza React con Vite para proporcionar un entorno de desarrollo rápido y eficiente. A continuación, se detalla la estructura del proyecto, los pasos para instalar las dependencias y cómo inicializar el proyecto.
 
+## Descripción del Proyecto
+
+Este proyecto es una aplicación web que permite a los usuarios descargar música de manera sencilla y eficiente. Incluye una interfaz moderna y responsiva, diseñada para ofrecer una experiencia de usuario fluida. Entre las características principales se encuentran:
+
+- Descarga de música mediante URL.
+- Validación de formularios para garantizar entradas correctas.
+- Notificaciones visuales para informar al usuario sobre el estado de las descargas.
+- Diseño atractivo con transiciones y animaciones.
+
+## Vista Previa del Proyecto
+
+A continuación, se muestra una captura de pantalla del resultado final de la aplicación:
+
+![Resultado del Proyecto](./src/assets/Resultproyecto.webp)
+
 ## Estructura del Proyecto
 
 La estructura principal del proyecto es la siguiente:

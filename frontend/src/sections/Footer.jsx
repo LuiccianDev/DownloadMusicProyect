@@ -2,10 +2,10 @@ import React from "react";
 
 export default function Footer() {
     return (
-        <div className="w-full min-h-screen flex items-center justify-center bg-gray-950 ">
-            <div className="lg:w-2/3 w-full  text-white flex flex-col ">
-                <div className="w-full text-4xl font-bold">
-                    <h1 className="w-full md:w-2/3">How can we help you. get in touch</h1>
+        <div className=" items-center justify-center p-5  bg-gray-950 pt-35">
+            <div className=" text-white gap-x-6 section">
+                <div className="w-full text-2xl lg:text-xl font-bold">
+                    <h1 className="w-full ">How can we help you. get in touch</h1>
                 </div>
                 <div className="flex mt-8 flex-col md:flex-row md:justify-between">
                     <p className="w-full md:w-2/3 text-gray-400">
@@ -22,14 +22,13 @@ export default function Footer() {
                     </div>
                 </div>
                 <div className="flex flex-col ">
-                    <div className="flex mt-24 mb-12 flex-row justify-between">
+                    <div className="flex mt-15 mb-10 flex-row justify-between">
                         <div className="font-Avatar text-3xl">
                             Lazdev
                         </div>
                         <a href="/About" className="hidden md:block cursor-pointer text-gray-600 hover:text-white uppercase">
                             About
                         </a>
-                        
                         <a  href="/Why-us" className="hidden md:block cursor-pointer text-gray-600 hover:text-white uppercase">
                             Why us
                         </a>
@@ -78,7 +77,7 @@ export default function Footer() {
                         </div>
                     </div>
                     <hr className="border-gray-600" />
-                    <p className="w-full text-center my-12 text-gray-600">
+                    <p className="w-full text-center my-5 text-gray-600">
                         Copyright © 2025 LuccianDev
                     </p>
                 </div>

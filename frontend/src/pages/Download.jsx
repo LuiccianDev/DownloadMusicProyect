@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import { downloadMusic } from "../services/DownloadServicesApi";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"; // Importar estilos de toastify
-import ErrorIcon from "../assets/icons_error.png"
-import SuccessIcon from "../assets/sucess_icon.png"
-import WarningIcon from "../assets/warning_icon.png"
 import SpinnerLoader from "../components/SpinnerLoader";
+
+import ErrorIcon from "../assets/ErrorIcon.png"
+import SuccessIcon from "../assets/SuccesIcon.png"
+import WarningIcon from "../assets/WarningIcon.png"
+
 // Configuración centralizada de estilos para los toasts
 const toastConfig = {
   position: "bottom-right",
@@ -24,7 +26,7 @@ const toastConfig = {
     };
     return icons[type] || null;
   },
-  className: "!rounded-lg !font-semibold !min-w-[300px] ",
+  className: "!rounded-lg !font-semibold !min-w-[200px] ",
   bodyClassName: "ml-2",
 };
 
@@ -54,7 +56,7 @@ export default function Download() {
     toast.info("Iniciando descarga...", {
       ...toastConfig,
       autoClose: 2000,
-      className: `${toastConfig.className} !bg-gradient-to-r from-purple-600 to-pink-600`,
+      className: `${toastConfig.className} !bg-gradient-to-r from-purple-500 to-purple-700`,
     });
 
     try {
@@ -66,6 +68,7 @@ export default function Download() {
       setDownloadUrl("");
       setFilename("");
     } catch (error) {
+      console.error("Error en la descarga:", error); // Registrar el error en la consola
       toast.error("Error en la descarga. Intente nuevamente", {
         ...toastConfig,
         className: `${toastConfig.className} !bg-gradient-to-r from-red-500 via-red-600 to-red-700`,
@@ -76,7 +79,8 @@ export default function Download() {
   };
 
   return (
-    <div className="download-container">
+    <div className="download-container ">
+      
       <ToastContainer
         {...toastConfig}
         toastStyle={{

@@ -11,16 +11,28 @@ backend/
 ├── app/
 │   ├── main.py          # Archivo principal para iniciar el servidor FastAPI
 │   ├── routes/          # Rutas de la API
+│   │   ├── __init__.py  # Inicialización del módulo de rutas
+│   │   └── download.py     # Rutas relacionadas con la descarga de música
 │   ├── services/        # Lógica de negocio y servicios
+│   │   ├── __init__.py  # Inicialización del módulo de servicios
+│   │   └── downloader_services .py # Servicio para manejar la descarga de música
 │   ├── utils/           # Utilidades y funciones auxiliares
+│   │   ├── __init__.py  # Inicialización del módulo de utilidades
+│   │   └── logger_utils.py   # Funciones auxiliares
 │   └── models/          # Modelos de datos
-├── requirements.txt     # Dependencias del proyecto
+│       ├── __init__.py  # Inicialización del módulo de modelos
+│       └── music.py     # Modelo de datos para la música
+├── pyroject.toml        # Dependencias del proyecto
+├── uv.lock              # Archivo de dependencia abslutos
 └── README.md            # Documentación del proyecto
 ```
 
 ## Instalación
 
 Sigue estos pasos para instalar y configurar el proyecto:
+
+Instala el empaquetador uv para inicializar el proyecto desde su repositorio oficial para obtner la documetacion oficila  de uso del empaquetador :  
+[https://github.com/astral-sh/uv](https://github.com/astral-sh/uv)
 
 1. Clona este repositorio en tu máquina local:
    ```bash
@@ -30,13 +42,19 @@ Sigue estos pasos para instalar y configurar el proyecto:
 
 2. Crea un entorno virtual (opcional pero recomendado):
    ```bash
-   python -m venv venv
+   uv venv
    source venv/bin/activate  # En Windows: venv\Scripts\activate
    ```
 
 3. Instala las dependencias necesarias:
    ```bash
-   pip install -r requirements.txt
+   uv pip install -r requirements.txt
+   ```
+4. Inicializar proyecto:
+   ```bash
+   uv sync
+   uv lock
+   uv tree
    ```
 
 ## Cómo ejecutar el servidor
@@ -45,7 +63,7 @@ Sigue estos pasos para instalar y configurar el proyecto:
 
 2. Ejecuta el servidor FastAPI:
    ```bash
-   uvicorn app:app --reload
+   uvicorn app.main:app --reload o uv run uvicorn app.main:app --reload
    ```
 
 3. El servidor estará disponible en `http://127.0.0.1:8000`. Puedes acceder a la documentación interactiva de la API en:

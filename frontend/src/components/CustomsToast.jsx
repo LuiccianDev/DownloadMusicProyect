@@ -35,7 +35,7 @@ const CustomNotification = ({ closeToast, data, toastProps }) => {
 };
 
 // ✅ Función para disparar la notificación personalizada
-export const showCustomToast = (type) => {
+const showCustomToast = (type) => {
   toast(<CustomNotification />, {
     data: {
       title: type.toUpperCase() + " Notification",
