@@ -1,19 +1,18 @@
 @import "tailwindcss";
 
 @layer base {
-  :root {
-    --font-roboto: "Roboto", sans-serif;
-    --color-dark-overlay: rgba(0, 0, 0, 0.6);
-    --color-light-overlay: rgba(255, 255, 255, 0.3);
-    
+  body {
+    background: rgb(0, 0, 0);
   }
+  
 }
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --font-Marker: "Permanent Marker", cursive;
   --font-Revalia: "Revalia", sans-serif;
-  --font-Avatar : "Airbender",  sans-serif;
-  --font-Bananas : "Bananas",  sans-serif
+  --font-Avatar: "Airbender", sans-serif;
+  --font-Bananas: "Bananas", sans-serif
 }
 
 @font-face {
@@ -23,6 +22,7 @@
   font-display: auto;
   src: url('fonts/Avatar Airbender.ttf') format('truetype');
 }
+
 @font-face {
   font-family: 'Bananas';
   font-style: normal;
@@ -34,13 +34,11 @@
 
 
 @layer components {
+
   /* Estilos para el contenedor principal */
   .download-container {
-    @apply relative flex flex-col justify-center items-center py-40
-           bg-gray-950 md:flex-col px-10
+    @apply relative flex flex-col justify-center items-center py-40 bg-gray-950 md:flex-col px-10
   }
-
-
   /* Estilos para el formulario */
   .download-form {
     @apply flex flex-col gap-4 relative z-10 p-2.5 sm:p-5;
@@ -48,22 +46,17 @@
 
   /* Estilos para los inputs */
   .download-input {
-    @apply w-full px-4 py-2.5 bg-gray-800/70 border border-gray-600 rounded-lg 
-           placeholder:text-gray-400 text-gray-200 focus:outline-none 
-           focus:ring-2 focus:ring-purple-500 focus:border-transparent
-           transition-all duration-200;
+    @apply w-full px-4 py-2.5 bg-gray-800/70 border border-gray-600 rounded-lg placeholder:text-gray-400 text-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200;
   }
 
   /* Estilos para el botón */
   .download-button {
-    @apply w-full py-3 px-6 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 
-           text-white font-semibold rounded-lg transition-all duration-300 
-           flex items-center justify-center gap-2 disabled:opacity-70;
+    @apply w-full py-3 px-6 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold rounded-lg transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-70;
   }
 
   /* Estilos para el título */
   .download-title {
-    @apply text-6xl md:text-8xl text-center  pb-6 font-bold font-Bananas  bg-clip-text pt-5 bg-gradient-to-r from-purple-600 to-pink-600 text-transparent;
+    @apply text-6xl md:text-8xl text-center pb-6 font-bold font-Bananas bg-clip-text pt-5 bg-gradient-to-r from-purple-600 to-pink-600 text-transparent;
   }
 
   /* Estilos para el contenedor del formulario */
@@ -73,46 +66,22 @@
 
   /* Estilos para las etiquetas */
   .download-label {
-    @apply block text-sm font-Revalia  font-medium text-gray-200;
+    @apply block text-sm font-Revalia font-medium text-gray-200;
   }
 
   .section-container {
-    @apply items-center max-w-screen mx-4 sm:mx-8 md:mx-16 lg:mx-24 xl:mx-40 md:flex xl:px-20 
+    @apply items-center max-w-screen mx-4 sm:mx-8 md:mx-16 lg:mx-24 xl:mx-40 md:flex xl:px-20
   }
 
   .section {
     @apply items-center max-w-screen mx-4 sm:mx-8 md:mx-16 lg:mx-24 xl:mx-40 md:flex-col xl:px-20
   }
+  
+  .icon-white {
+    filter: brightness(0) invert(1);
+  }
+
 }
 
-.icon-white {
-  filter: brightness(0) invert(1);
-}
-body {
-  background: rgb(0,0,0);
-}
-@media (prefers-color-scheme: light) {
-  .download-container {
-    background-image: url("/src/assets/bg.webp");
-  }
 
-  .download-container::before {
-    background-color: rgba(255, 255, 255, 0.3);
-  }
 
-  .download-title {
-    @apply text-gray-900;
-  }
-
-  .download-label {
-    @apply text-gray-800;
-  }
-
-  .download-input {
-    @apply bg-gray-100 text-gray-800 border-gray-400;
-  }
-
-  .download-button {
-    @apply bg-gradient-to-r  from-blue-500 to-green-500 hover:from-blue-600 hover:to-green-600;
-  }
-}

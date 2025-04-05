@@ -1,0 +1,34 @@
+{
+    "personajes": [
+        {
+            "id": 1,
+            "nombre": "Arthorius",
+            "puntuacion": 5
+        },
+        {
+            "id": 2,
+            "nombre": "Luna Starwind",
+            "puntuacion": 4
+        },
+        {
+            "id": 3,
+            "nombre": "Kragor el Destructor",
+            "puntuacion": 2
+        },
+        {
+            "id": 4,
+            "nombre": "Evelynn Shadowthorn",
+            "puntuacion": 1
+        },
+        {
+            "id": 5,
+            "nombre": "Zanix el Hechicero",
+            "puntuacion": 2
+        },
+        {
+            "id": 6,
+            "nombre": "Zanix el Hechicero",
+            "puntuacion": 4
+        }
+    ]
+}

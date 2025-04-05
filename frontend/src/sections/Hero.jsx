@@ -1,22 +1,33 @@
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { actualizarPuntuacion } from "../services/Starts"; // Import the updated function
+import Data from "../data/customers.json";
 
 const Home = () => {
     const navigate = useNavigate();
-    const [rating, setRating] = useState(4.5); // State to manage the rating, supports non-integer values
+    const [rating, setRating] = useState(0); // Initialize with 0
+    const [length, setlength] = useState(0)
+
+    
+    useEffect(() => {
+        actualizarPuntuacion(Data)
+        setRating(Data.promedio); // Set initial average from JSON
+        setlength(Data.personajes.length)
+    }, []);
+
+    
 
     return (
         <div className="bg-gray-950">
             <section className="relative">
-                <div className="relative z-10 max-w-screen-xl mx-auto px-4 py-28 md:px-8">
+                <div className="relative z-10 max-w-screen-xl mx-auto px-20 py-28 sm:px-23 md:px-25 ">
                     <div className="space-y-5 max-w-4xl mx-auto text-center py-30">
-                        <h2 className="text-4xl text-white font-extrabold mx-auto md:text-5xl">
-                            <span className="text-transparent bg-clip-text bg-gradient-to-tl from-purple-600 to-pink-600 ">Download</span>  you favorite music with the best tools
+                        <h2 className="text-4xl text-white font-extrabold mx-auto  sm:text-5xl md:text-6xl">
+                            <span className="text-transparent bg-clip-text bg-gradient-to-tl from-purple-600 to-pink-600 ">Download</span> your favorite music with the best tools
                         </h2>
                         <p className="max-w-2xl mx-auto text-gray-400 text-balance">
-                        Convierte cada momento en una experiencia musical única con nuestras herramientas.
-                        Tu soundtrack perfecto, disponible en segundos. Descarga y disfruta.
-
+                            Convierte cada momento en una experiencia musical única con nuestras herramientas.
+                            Tu soundtrack perfecto, disponible en segundos. Descarga y disfruta.
                         </p>
                         <form
                             onSubmit={(e) => e.preventDefault()}
@@ -26,15 +37,14 @@ const Home = () => {
                                 placeholder="Enter your email"
                                 className="w-full px-3 py-2.5 text-gray-400 bg-gray-700 focus:bg-gray-900 duration-150 outline-none rounded-lg shadow sm:max-w-sm sm:w-auto"
                             />
-                                <button 
-                                    onClick={() => navigate("/download")}
-                                    className="transform transition-transform duration-300 hover:scale-110 flex items-center justify-center gap-x-2 py-2.5 px-4 mt-3 w-full text-sm text-white font-medium bg-gradient-to-r from-purple-600 to-pink-600 hover:bg-sky-400 active:bg-sky-600  rounded-lg sm:mt-0 sm:w-auto cursor-pointer">
-                                    Get started
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
-                                        <path fillRule="evenodd" d="M2 10a.75.75 0 01.75-.75h12.59l-2.1-1.95a.75.75 0 111.02-1.1l3.5 3.25a.75.75 0 010 1.1l-3.5 3.25a.75.75 0 11-1.02-1.1l2.1-1.95H2.75A.75.75 0 012 10z" clipRule="evenodd" />
-                                    </svg>
-                                </button>
-
+                            <button 
+                                onClick={() => navigate("/download")}
+                                className="transform transition-transform duration-300 hover:scale-110 flex items-center justify-center gap-x-2 py-2.5 px-4 mt-3 w-full text-sm text-white font-medium bg-gradient-to-r from-purple-600 to-pink-600 hover:bg-sky-400 active:bg-sky-600  rounded-lg sm:mt-0 sm:w-auto cursor-pointer">
+                                Get started
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
+                                    <path fillRule="evenodd" d="M2 10a.75.75 0 01.75-.75h12.59l-2.1-1.95a.75.75 0 111.02-1.1l3.5 3.25a.75.75 0 010 1.1l-3.5 3.25a.75.75 0 11-1.02-1.1l2.1-1.95H2.75A.75.75 0 012 10z" clipRule="evenodd" />
+                                </svg>
+                            </button>
                         </form>
                         <div className="flex justify-center items-center gap-x-4 text-gray-400 text-sm">
                             <div className="flex">
@@ -44,11 +54,11 @@ const Home = () => {
                                     return (
                                         <svg
                                             key={idx}
-                                            className="size-5 cursor-pointer"
+                                            className="size-5"
                                             xmlns="http://www.w3.org/2000/svg"
                                             fill={isFullStar ? "yellow" : isHalfStar ? "url(#half)" : "currentColor"}
                                             viewBox="0 0 20 20"
-                                            onClick={() => setRating(idx + 1)} // Update rating on click
+                                            // Removed onClick handler
                                         >
                                             {isHalfStar && (
                                                 <defs>
@@ -64,7 +74,7 @@ const Home = () => {
                                 })}
                             </div>
                             <p>
-                                <span className="text-gray-100">{rating.toFixed(1)}</span> by over 200 users
+                                <span className="text-gray-100">{rating.toFixed(1)}</span> by over {length} users
                             </p>
                         </div>
                     </div>
