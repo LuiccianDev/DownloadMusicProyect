@@ -6,7 +6,7 @@ Este proyecto permite a los usuarios descargar música desde diversas fuentes de
 ### Vista Previa
 A continuación, se muestra una vista previa de la interfaz del proyecto:
 
-![Vista previa del proyecto](frontend/src/assets/ResultProyect.webp)
+![Vista previa del proyecto](frontend/assets/ResultProject.png)
 
 ## Requisitos Previos
 Antes de comenzar, asegúrate de tener lo siguiente instalado en tu sistema:
