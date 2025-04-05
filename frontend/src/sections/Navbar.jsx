@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import MusicIcon from "../assets/music.png";
+import MusicIcon from "../assets/MusicIconNavbar.png";
 import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
