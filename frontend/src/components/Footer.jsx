@@ -2,8 +2,8 @@ import React from "react";
 
 export default function Footer() {
     return (
-        <div className="w-full flex items-center justify-center bg-gray-950 pt-35">
-            <div className="mx-10 sm:mx text-white flex flex-col ">
+        <div className=" items-center justify-center p-5 bg-gray-950 pt-35">
+            <div className=" text-white gap-x-6 section">
                 <div className="w-full text-2xl lg:text-xl font-bold">
                     <h1 className="w-full ">How can we help you. get in touch</h1>
                 </div>
@@ -22,7 +22,7 @@ export default function Footer() {
                     </div>
                 </div>
                 <div className="flex flex-col ">
-                    <div className="flex mt-24 mb-12 flex-row justify-between">
+                    <div className="flex mt-15 mb-10 flex-row justify-between">
                         <div className="font-Avatar text-3xl">
                             Lazdev
                         </div>
@@ -77,7 +77,7 @@ export default function Footer() {
                         </div>
                     </div>
                     <hr className="border-gray-600" />
-                    <p className="w-full text-center my-12 text-gray-600">
+                    <p className="w-full text-center my-5 text-gray-600">
                         Copyright © 2025 LuccianDev
                     </p>
                 </div>

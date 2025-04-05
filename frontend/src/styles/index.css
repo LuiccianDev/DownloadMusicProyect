@@ -5,6 +5,7 @@
     --font-roboto: "Roboto", sans-serif;
     --color-dark-overlay: rgba(0, 0, 0, 0.6);
     --color-light-overlay: rgba(255, 255, 255, 0.3);
+    
   }
 }
 
@@ -35,14 +36,14 @@
 @layer components {
   /* Estilos para el contenedor principal */
   .download-container {
-    @apply relative flex flex-col justify-center items-center min-h-min max-h-fit py-40
-           bg-gray-950
+    @apply relative flex flex-col justify-center items-center py-40
+           bg-gray-950 md:flex-col px-10
   }
 
 
   /* Estilos para el formulario */
   .download-form {
-    @apply flex flex-col gap-4 relative z-10 p-5;
+    @apply flex flex-col gap-4 relative z-10 p-2.5 sm:p-5;
   }
 
   /* Estilos para los inputs */
@@ -62,7 +63,7 @@
 
   /* Estilos para el título */
   .download-title {
-    @apply text-8xl md:text-8xl text-center  pb-6 font-bold font-Bananas  bg-clip-text pt-5 bg-gradient-to-r from-purple-600 to-pink-600 text-transparent;
+    @apply text-6xl md:text-8xl text-center  pb-6 font-bold font-Bananas  bg-clip-text pt-5 bg-gradient-to-r from-purple-600 to-pink-600 text-transparent;
   }
 
   /* Estilos para el contenedor del formulario */
@@ -74,12 +75,22 @@
   .download-label {
     @apply block text-sm font-Revalia  font-medium text-gray-200;
   }
+
+  .section-container {
+    @apply items-center max-w-screen mx-4 sm:mx-8 md:mx-16 lg:mx-24 xl:mx-40 md:flex xl:px-20 
+  }
+
+  .section {
+    @apply items-center max-w-screen mx-4 sm:mx-8 md:mx-16 lg:mx-24 xl:mx-40 md:flex-col xl:px-20
+  }
 }
 
 .icon-white {
   filter: brightness(0) invert(1);
 }
-
+body {
+  background: rgb(0,0,0);
+}
 @media (prefers-color-scheme: light) {
   .download-container {
     background-image: url("/src/assets/bg.webp");

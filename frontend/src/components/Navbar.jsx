@@ -25,16 +25,16 @@ export default function Navbar() {
     };
 
     return (
-        <header className="bg-gray-950">
-            <nav className={`pb-5 md:text-sm ${state ? "absolute z-20 top-0 inset-x-0 bg-gray-800 rounded-xl mx-2 mt-2 md:mx-0 md:mt-0 md:relative md:bg-transparent" : ""}`}>
-                <div className="gap-x-14 items-center max-w-screen mx-auto px-4 md:flex md:px-8">
+        <header className="sticky top-0 z-30 backdrop-blur-2xl bg-gray-950/70 shadow-md transition-all duration-300">
+            <nav className=" md:text-sm transition-all duration-300 bg-black/80 md:bg-transparent">
+                <div className="gap-x-6 items-center max-w-screen mx-4 sm:mx-8 md:mx-16 lg:mx-24 xl:mx-40 md:flex xl:px-20 p-5 ">
                     {/* LOGO */}
-                    <div className="flex items-center justify-between py-5">
-                        <div className="flex items-center transform transition-transform duration-300 hover:scale-110">
+                    <div className="flex items-center justify-between ">
+                        <div className="flex items-center transform transition-transform duration-300 hover:scale-110 ">
                             <button onClick={() => navigate("/")} className="">
-                                <img src={MusicIcon} className="icon-white h-10 w-10" alt="Music Logo" />
+                                <img src={MusicIcon} className="icon-white size-8 sm:size-8" alt="Music Logo" />
                             </button>
-                            <span className="text-white ml-2 flex flex-col text-xl">
+                            <span className="text-white ml-2 flex flex-col text-mx sm:text-lg">
                                 LazDev <span className="text-bold text-transparent bg-clip-text bg-gradient-to-tl from-purple-600 to-pink-600 ">Music</span>
                             </span>
                         </div>
@@ -55,7 +55,7 @@ export default function Navbar() {
 
                     {/* MENÚ */}
                     <div className={`flex-1 items-center mt-8 md:mt-0 md:flex ${state ? 'block' : 'hidden md:block'} `}>
-                        <ul className="flex-1 justify-end items-center space-y-6 md:flex md:space-x-8 md:space-y-0">
+                        <ul className="flex-1 justify-end items-center space-y-4 md:flex md:space-x-6 md:space-y-0">
                             {navigation.map((item, idx) => (
                                 <li key={idx} className="text-gray-300 hover:text-gray-400">
                                     <button onClick={() => navigate(item.path)} className="block">
