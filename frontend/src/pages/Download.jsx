@@ -6,6 +6,8 @@ import ErrorIcon from "../assets/icons_error.png"
 import SuccessIcon from "../assets/sucess_icon.png"
 import WarningIcon from "../assets/warning_icon.png"
 import SpinnerLoader from "../components/SpinnerLoader";
+import Bg from "../assets/OIP.jpg"
+
 // Configuración centralizada de estilos para los toasts
 const toastConfig = {
   position: "bottom-right",
@@ -76,7 +78,8 @@ export default function Download() {
   };
 
   return (
-    <div className="download-container">
+    <div className="download-container ">
+      {/* <img src={Bg} alt="Background" className="absolute top-0 left-0 w-full h-full object-cover mask-cover  filter blur-md translate-y-px to-20% " /> */}
       <ToastContainer
         {...toastConfig}
         toastStyle={{

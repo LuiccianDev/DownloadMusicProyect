@@ -2,15 +2,16 @@ import React from 'react';
 
 export default function Contact() {
   return (
-    <div className="min-h-fit flex items-center justify-center bg-gray-950 text-white px-6 pt-8">
-      <div className="max-w-4xl w-full p-6 bg-gray-800 rounded-lg shadow-lg">
-        <h1 className="text-bold text-transparent text-7xl bg-clip-text bg-gradient-to-tl from-purple-600 to-pink-600 pb-4 text-center">Contact Us</h1>
-        <p className="mt-4 text-lg text-gray-300 text-center">
+    <div className="min-h-fit  bg-gray-950 text-white px-6 pt-8 relative flex flex-col justify-center items-center py-40
+            md:flex-col ">
+      <div className="max-w-3xl w-full p-5 sm:p-8 bg-gray-800 rounded-lg shadow-lg">
+        <h1 className="text-bold text-transparent text-5xl sm:text-7xl bg-clip-text bg-gradient-to-tl from-purple-600 to-pink-600 pb-4 text-center">Contact Us</h1>
+        <p className="mt-4 text-sm sm:text-lg  text-gray-300 text-center text-balance">
           Have questions or need assistance? Feel free to reach out! Our team is always ready 
           to help you with any inquiries related to our services.
         </p>
 
-        <form className="mt-6">
+        <form className="mt-6 md:mx-5">
           <div className="mb-4">
             <label className="block text-gray-400 text-sm mb-2">Your Name</label>
             <input 
