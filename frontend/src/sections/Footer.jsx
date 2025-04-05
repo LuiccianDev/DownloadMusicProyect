@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Footer() {
     return (
-        <div className=" items-center justify-center p-5 bg-gray-950 pt-35">
+        <div className=" items-center justify-center p-5  bg-gray-950 pt-35">
             <div className=" text-white gap-x-6 section">
                 <div className="w-full text-2xl lg:text-xl font-bold">
                     <h1 className="w-full ">How can we help you. get in touch</h1>

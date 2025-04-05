@@ -27,7 +27,7 @@ export default function Navbar() {
     return (
         <header className="sticky top-0 z-30 backdrop-blur-2xl bg-gray-950/70 shadow-md transition-all duration-300">
             <nav className=" md:text-sm transition-all duration-300 bg-black/80 md:bg-transparent">
-                <div className="gap-x-6 items-center max-w-screen mx-4 sm:mx-8 md:mx-16 lg:mx-24 xl:mx-40 md:flex xl:px-20 p-5 ">
+                <div className="gap-x-6 items-center max-w-screen mx-4 sm:mx-8 md:mx-16 lg:mx-24 xl:mx-40 md:flex xl:px-20 pt-4 ">
                     {/* LOGO */}
                     <div className="flex items-center justify-between ">
                         <div className="flex items-center transform transition-transform duration-300 hover:scale-110 ">
