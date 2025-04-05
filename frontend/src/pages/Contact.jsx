@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Contact() {
   return (
-    <div className="min-h-fit  bg-gray-950 text-white px-6 pt-8 relative flex flex-col justify-center items-center py-40
+    <div className="min-h-fit  bg-gray-950 text-white px-6 pt-20 relative flex flex-col justify-center items-center py-40
             md:flex-col ">
       <div className="max-w-3xl w-full p-5 sm:p-8 bg-gray-800 rounded-lg shadow-lg">
         <h1 className="text-bold text-transparent text-5xl sm:text-7xl bg-clip-text bg-gradient-to-tl from-purple-600 to-pink-600 pb-4 text-center">Contact Us</h1>
