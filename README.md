@@ -1,7 +1,12 @@
 # DownloadMusic
 
 ## Descripción
-Este proyecto permite a los usuarios descargar música desde diversas fuentes de manera sencilla y eficiente.
+Este proyecto permite a los usuarios descargar música desde diversas fuentes de manera sencilla y eficiente. Está diseñado para ser fácil de usar, con una interfaz intuitiva y un backend robusto que garantiza un rendimiento óptimo.
+
+### Vista Previa
+A continuación, se muestra una vista previa de la interfaz del proyecto:
+
+![Vista previa del proyecto](frontend/assets/ResultProject.webp)
 
 ## Requisitos Previos
 Antes de comenzar, asegúrate de tener lo siguiente instalado en tu sistema:
@@ -11,11 +16,10 @@ Antes de comenzar, asegúrate de tener lo siguiente instalado en tu sistema:
 - **Redis**: Para la gestión de tareas en segundo plano con Celery.
 
 ## Backend
-El backend está desarrollado en Python y utiliza las siguientes tecnologías:
-- **Flask**: Para la creación de la API REST.
-- **SQLAlchemy**: Para la gestión de la base de datos.
-- **Requests**: Para realizar solicitudes HTTP a las fuentes de música.
-- **Celery**: Para la gestión de tareas en segundo plano.
+El backend está desarrollado en Python y utiliza tecnologías modernas para garantizar escalabilidad y seguridad. Además de las funcionalidades básicas, el backend incluye:
+- **Validación de datos**: Para garantizar la integridad de la información.
+- **Gestión de errores**: Manejo adecuado de errores para mejorar la experiencia del usuario.
+- **Soporte para múltiples plataformas**: Permite la integración con diversas fuentes de música.
 
 ### Funcionalidades del Backend
 - Gestión de usuarios y autenticación.
@@ -24,10 +28,10 @@ El backend está desarrollado en Python y utiliza las siguientes tecnologías:
 - Procesamiento de tareas en segundo plano para descargas.
 
 ## Frontend
-El frontend está desarrollado utilizando las siguientes tecnologías:
-- **React**: Para la creación de la interfaz de usuario.
-- **Axios**: Para la comunicación con el backend.
-- **Bootstrap**: Para el diseño responsivo y estilización.
+El frontend ofrece una experiencia de usuario fluida y atractiva. Está diseñado para ser responsivo y accesible desde cualquier dispositivo. Además de las funcionalidades básicas, incluye:
+- **Notificaciones en tiempo real**: Para informar al usuario sobre el progreso de las descargas.
+- **Filtros avanzados**: Para refinar las búsquedas de música.
+- **Soporte multilenguaje**: Permite cambiar el idioma de la interfaz.
 
 ### Funcionalidades del Frontend
 - Interfaz intuitiva para buscar y descargar música.
