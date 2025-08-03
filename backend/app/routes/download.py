@@ -1,33 +1,35 @@
-from fastapi import APIRouter, BackgroundTasks
+from fastapi import APIRouter, BackgroundTasks, HTTPException
 from fastapi.responses import FileResponse
-from app.services.download_services import descargar_musica, delete_file
+
+from app.exceptions import DownloadServiceError, FFmpegError, InvalidURLError
 from app.schema.download_schema import RequestDownload
+from app.services.download_services import delete_file, descargar_musica
 from app.utils.logger_utils import logger
 
 download_router = APIRouter()
 
 
 @download_router.post("/download")
-async def download(request: RequestDownload, background_tasks: BackgroundTasks):
-    url = request.url
-    filename = request.filename  # Obtener nombre del usuario
+async def download(request: RequestDownload, background_tasks: BackgroundTasks) -> FileResponse:
+    try:
+        file_path = descargar_musica(request.url, request.filename)
 
-    # Descargar la música con el nombre personalizado
-    file_path = descargar_musica(url, filename)
+    except InvalidURLError as e:
+        logger.warning(f"URL inválida: {e}")
+        raise HTTPException(status_code=400, detail=str(e)) from e
 
-    if not file_path:
-        return {"message": "Error al descargar la música"}
+    except FFmpegError as e:
+        logger.error(f"Error de FFMpeg: {e}")
+        raise HTTPException(status_code=500, detail=str(e)) from e
 
-    # Función para eliminar el archivo después de enviarlo
+    except DownloadServiceError as e:
+        logger.error(f"Error en el servicio de descarga: {e}")
+        raise HTTPException(status_code=500, detail=str(e)) from e
 
     background_tasks.add_task(delete_file, file_path)
-    
-    
-    logger.info(f"Archivo descargado y listo para enviar: {file_path}")
 
-    # Enviar el archivo y eliminarlo después
-    response = FileResponse(
-        file_path, media_type="audio/mpeg", filename=f"{filename}.mp3"
+    return FileResponse(
+        path=file_path,
+        media_type="audio/mpeg",
+        filename=f"{request.filename}.mp3",
     )
-
-    return response

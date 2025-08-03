@@ -17,5 +17,52 @@ dependencies = [
 
 [dependency-groups]
 dev = [
+    "black>=25.1.0",
+    "isort>=6.0.1",
+    "mypy>=1.17.1",
     "ruff>=0.11.4",
 ]
+
+[tool.black]
+line-length = 88
+target-version = ["py313"]
+skip-string-normalization = true
+
+[tool.isort]
+profile = "black"
+line_length = 88
+multi_line_output = 3
+include_trailing_comma = true
+known_first_party = ["app"]  # Ajusta según tu estructura
+known_third_party = ["fastapi", "pydantic", "yt_dlp"]
+skip_gitignore = true
+combine_as_imports = true
+
+[tool.ruff]
+line-length = 88
+target-version = "py313"
+fix = true
+exclude = ["migrations", "tests/test_data", ".venv"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "C", "B"]
+ignore = ["B008", "E501"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["app"]
+known-third-party = ["fastapi", "pydantic", "yt_dlp"]
+force-single-line = false
+
+
+[tool.mypy]
+python_version = "3.13"
+strict = true
+ignore_missing_imports = true
+disallow_untyped_defs = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+warn_return_any = true
+show_error_codes = true
+exclude = ["tests/test_data", "migrations"]
+explicit_package_bases = true
+mypy_path = "app"
