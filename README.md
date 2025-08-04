@@ -19,7 +19,7 @@ Aplicación web full-stack que permite a los usuarios convertir y descargar vide
 
 ---
 
-## 📋 Tabla de Contenidos
+## Tabla de Contenidos
 
 - [Características Principales](#-características-principales)
 - [Estructura del Proyecto](#️-estructura-del-proyecto)
