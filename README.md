@@ -1,97 +1,65 @@
-# DownloadMusic
+<div align="center">
+  <h1>🎵 DownloadMusic Project 🎵</h1>
 
-## Descripción
-Este proyecto permite a los usuarios descargar música desde diversas fuentes de manera sencilla y eficiente. Está diseñado para ser fácil de usar, con una interfaz intuitiva y un backend robusto que garantiza un rendimiento óptimo.
 
-### Vista Previa
-A continuación, se muestra una vista previa de la interfaz del proyecto:
+<p >
+  <em>Potente aplicación web para descargar música de YouTube de forma sencilla y rápida.</em>
+</p>
 
-![Vista previa del proyecto](frontend/assets/ResultProject.webp)
+  [![Python Version](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/)
+  [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+  [![MCP Compatible](https://img.shields.io/badge/MCP-Compatible-brightgreen)](https://modelcontextprotocol.io)
+  [![FastAPI](https://img.shields.io/badge/FastAPI-005571?logo=fastapi)](https://fastapi.tiangolo.com/)
+  [![React](https://img.shields.io/badge/React-20232a?logo=react&logoColor=61DAFB)](https://reactjs.org/)
+  [![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
 
-## Requisitos Previos
-Antes de comenzar, asegúrate de tener lo siguiente instalado en tu sistema:
-- **Python 3.8+**: Para ejecutar el backend.
-- **Node.js 14+**: Para ejecutar el frontend.
-- **Git**: Para clonar el repositorio.
-- **Redis**: Para la gestión de tareas en segundo plano con Celery.
+</Div>
 
-## Backend
-El backend está desarrollado en Python y utiliza tecnologías modernas para garantizar escalabilidad y seguridad. Además de las funcionalidades básicas, el backend incluye:
-- **Validación de datos**: Para garantizar la integridad de la información.
-- **Gestión de errores**: Manejo adecuado de errores para mejorar la experiencia del usuario.
-- **Soporte para múltiples plataformas**: Permite la integración con diversas fuentes de música.
+Aplicación web full-stack que permite a los usuarios convertir y descargar videos de YouTube a formato MP3 de manera programática a través de una API RESTful y una interfaz de usuario intuitiva.
 
-### Funcionalidades del Backend
-- Gestión de usuarios y autenticación.
-- Búsqueda y descarga de música desde diferentes plataformas.
-- Almacenamiento de información en una base de datos.
-- Procesamiento de tareas en segundo plano para descargas.
+---
 
-## Frontend
-El frontend ofrece una experiencia de usuario fluida y atractiva. Está diseñado para ser responsivo y accesible desde cualquier dispositivo. Además de las funcionalidades básicas, incluye:
-- **Notificaciones en tiempo real**: Para informar al usuario sobre el progreso de las descargas.
-- **Filtros avanzados**: Para refinar las búsquedas de música.
-- **Soporte multilenguaje**: Permite cambiar el idioma de la interfaz.
+## 📋 Tabla de Contenidos
 
-### Funcionalidades del Frontend
-- Interfaz intuitiva para buscar y descargar música.
-- Visualización del historial de descargas.
-- Gestión de la cuenta del usuario.
+- [✨ Características Principales](#-características-principales)
+- [🛠️ Estructura del Proyecto](#️-estructura-del-proyecto)
+- [🚀 Cómo Empezar](#-cómo-empezar)
+- [🤝 Contribuciones](#-contribuciones)
 
-## Instalación
-1. **Clona este repositorio**:
-   ```bash
-   git clone https://github.com/tu-usuario/DownloadMusic.git
-   cd DownloadMusic
-   ```
+## ✨ Características Principales
 
-2. **Configura el Backend**:
-   - Navega al directorio `backend`:
-     ```bash
-     cd backend
-     ```
-   - Crea y activa un entorno virtual:
-     ```bash
-     python -m venv venv
-     source venv/bin/activate  # En Windows: venv\Scripts\activate
-     ```
-   - Instala las dependencias:
-     ```bash
-     pip install -r requirements.txt
-     ```
-   - Configura las variables de entorno necesarias (ver `README` en el directorio `backend`).
+- **Conversión Rápida:** Descarga y convierte videos de YouTube a MP3.
+- **Interfaz Moderna:** Frontend reactivo y fácil de usar construido con React y Vite.
+- **Backend Robusto:** API potente y escalable desarrollada con FastAPI.
+- **Calidad de Código:** Formateo consistente con Black y Prettier.
+- **Gestión de Paquetes:** Dependencias manejadas con `uv` para el backend y `npm` para el frontend.
 
-3. **Configura el Frontend**:
-   - Navega al directorio `frontend`:
-     ```bash
-     cd ../frontend
-     ```
-   - Instala las dependencias:
-     ```bash
-     npm install
-     ```
-   - Inicia el servidor de desarrollo:
-     ```bash
-     npm start
-     ```
+## 🛠️ Estructura del Proyecto
 
-4. **Inicia Redis y Celery**:
-   - Asegúrate de que Redis esté en ejecución.
-   - Inicia el worker de Celery desde el directorio `backend`:
-     ```bash
-     celery -A app.celery worker --loglevel=info
-     ```
+El proyecto se divide en dos componentes principales:
 
-5. **Ejecuta la Aplicación**:
-   - Inicia el servidor del backend desde el directorio `backend`:
-     ```bash
-     flask run
-     ```
-   - Accede a la aplicación en tu navegador en `http://localhost:3000`.
+- **`./frontend`**: Contiene la aplicación de React que proporciona la interfaz de usuario. Para más detalles, consulta el [README de Frontend](./frontend/README.md).
+- **`./backend`**: Contiene la aplicación de FastAPI que gestiona la lógica de descarga. Para más detalles, consulta el [README de Backend](./backend/README.md).
 
-## Contribuciones
-Las contribuciones son bienvenidas. Por favor, abre un issue o envía un pull request.
+## 🚀 Cómo Empezar
 
-## Licencia
-Este proyecto está licenciado bajo la [MIT License](LICENSE). Siéntete libre de usarlo y modificarlo según tus necesidades.
+Para ejecutar este proyecto, necesitarás tener Node.js y Python (con `uv`) instalados.
 
+### Frontend
+
+1.  Navega al directorio `frontend`.
+2.  Instala las dependencias: `npm install`.
+3.  Inicia el servidor de desarrollo: `npm run dev`.
+
+### Backend
+
+1.  Navega al directorio `backend`.
+2.  Crea y activa un entorno virtual.
+3.  Instala las dependencias: `uv pip install -r requirements.txt`.
+4.  Inicia el servidor: `uvicorn app.main:app --reload`.
+
+
+
+## 🤝 Contribuciones
+
+¡Las contribuciones son bienvenidas! Por favor, abre un issue o envía un pull request con tus cambios.
