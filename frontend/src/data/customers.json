@@ -3,32 +3,74 @@
         {
             "id": 1,
             "nombre": "Arthorius",
-            "puntuacion": 5
+            "puntuacion": 5,
+            "comentario": "¡Increíble servicio! La mejor calidad de descarga que he encontrado."
         },
         {
             "id": 2,
             "nombre": "Luna Starwind",
-            "puntuacion": 4
+            "puntuacion": 4,
+            "comentario": "Muy buena experiencia, volveré a usarlo."
         },
         {
             "id": 3,
             "nombre": "Kragor el Destructor",
-            "puntuacion": 2
+            "puntuacion": 2,
+            "comentario": "Podría mejorar la velocidad de descarga."
         },
         {
             "id": 4,
             "nombre": "Evelynn Shadowthorn",
-            "puntuacion": 1
+            "puntuacion": 1,
+            "comentario": "No funcionó como esperaba."
         },
         {
             "id": 5,
             "nombre": "Zanix el Hechicero",
-            "puntuacion": 2
+            "puntuacion": 2,
+            "comentario": "Interfaz confusa, necesita mejoras."
         },
         {
             "id": 6,
-            "nombre": "Zanix el Hechicero",
-            "puntuacion": 4
+            "nombre": "Aria Melodía",
+            "puntuacion": 5,
+            "comentario": "Perfecto para encontrar música rara que no está en otros lados."
+        },
+        {
+            "id": 7,
+            "nombre": "Thalrik Forjaluz",
+            "puntuacion": 4,
+            "comentario": "Buen servicio, buena calidad de audio."
+        },
+        {
+            "id": 8,
+            "nombre": "Seraphina Celeste",
+            "puntuacion": 5,
+            "comentario": "¡Mi aplicación favorita para descargar música!"
+        },
+        {
+            "id": 9,
+            "nombre": "Draven Sombra",
+            "puntuacion": 3,
+            "comentario": "Funciona bien, pero a veces es lento."
+        },
+        {
+            "id": 10,
+            "nombre": "Isolde Niebla",
+            "puntuacion": 5,
+            "comentario": "La mejor calidad de sonido que he encontrado."
+        },
+        {
+            "id": 11,
+            "nombre": "Orion Estelar",
+            "puntuacion": 4,
+            "comentario": "Muy buena selección de música."
+        },
+        {
+            "id": 12,
+            "nombre": "Nyx Nocturna",
+            "puntuacion": 5,
+            "comentario": "¡Increíble! Justo lo que necesitaba."
         }
     ]
 }

@@ -1,31 +1,19 @@
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
-import { actualizarPuntuacion } from "../services/Starts"; // Import the updated function
-import Data from "../data/customers.json";
+import { useRating } from "../hooks/useRating.js";
 
-const Home = () => {
+const Hero = () => {
     const navigate = useNavigate();
-    const [rating, setRating] = useState(0); // Initialize with 0
-    const [length, setlength] = useState(0)
-
-    
-    useEffect(() => {
-        actualizarPuntuacion(Data)
-        setRating(Data.promedio); // Set initial average from JSON
-        setlength(Data.personajes.length)
-    }, []);
-
-    
+    const { rating, length } = useRating();
 
     return (
-        <div className="bg-gray-950">
+        <div className="bg-white dark:bg-gray-950">
             <section className="relative">
                 <div className="relative z-10 max-w-screen-xl mx-auto px-20 py-28 sm:px-23 md:px-25 ">
                     <div className="space-y-5 max-w-4xl mx-auto text-center py-30">
-                        <h2 className="text-4xl text-white font-extrabold mx-auto  sm:text-5xl md:text-6xl">
+                        <h2 className="text-4xl text-gray-800 dark:text-white font-extrabold mx-auto  sm:text-5xl md:text-6xl">
                             <span className="text-transparent bg-clip-text bg-gradient-to-tl from-purple-600 to-pink-600 ">Download</span> your favorite music with the best tools
                         </h2>
-                        <p className="max-w-2xl mx-auto text-gray-400 text-balance">
+                        <p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-400 text-balance">
                             Convierte cada momento en una experiencia musical única con nuestras herramientas.
                             Tu soundtrack perfecto, disponible en segundos. Descarga y disfruta.
                         </p>
@@ -35,7 +23,7 @@ const Home = () => {
                             <input
                                 type="text"
                                 placeholder="Enter your email"
-                                className="w-full px-3 py-2.5 text-gray-400 bg-gray-700 focus:bg-gray-900 duration-150 outline-none rounded-lg shadow sm:max-w-sm sm:w-auto"
+                                className="w-full px-3 py-2.5 text-gray-600 dark:text-gray-400 bg-gray-200 dark:bg-gray-700 focus:bg-gray-100 dark:focus:bg-gray-900 duration-150 outline-none rounded-lg shadow sm:max-w-sm sm:w-auto"
                             />
                             <button 
                                 onClick={() => navigate("/download")}
@@ -46,7 +34,7 @@ const Home = () => {
                                 </svg>
                             </button>
                         </form>
-                        <div className="flex justify-center items-center gap-x-4 text-gray-400 text-sm">
+                        <div className="flex justify-center items-center gap-x-4 text-gray-500 dark:text-gray-400 text-sm">
                             <div className="flex">
                                 {Array(5).fill(0).map((_, idx) => {
                                     const isFullStar = idx < Math.floor(rating);
@@ -58,7 +46,6 @@ const Home = () => {
                                             xmlns="http://www.w3.org/2000/svg"
                                             fill={isFullStar ? "yellow" : isHalfStar ? "url(#half)" : "currentColor"}
                                             viewBox="0 0 20 20"
-                                            // Removed onClick handler
                                         >
                                             {isHalfStar && (
                                                 <defs>
@@ -74,15 +61,15 @@ const Home = () => {
                                 })}
                             </div>
                             <p>
-                                <span className="text-gray-100">{rating.toFixed(1)}</span> by over {length} users
+                                <span className="text-gray-700 dark:text-gray-100">{rating.toFixed(1)}</span> by over {length} users
                             </p>
                         </div>
                     </div>
                 </div>
-                <div className="absolute inset-0 m-auto max-w-xs h-[357px] blur-[118px] sm:max-w-md md:max-w-lg" style={{ background: "linear-gradient(106.89deg, rgba(192, 132, 252, 0.11) 15.73%, rgba(14, 165, 233, 0.41) 15.74%, rgba(232, 121, 249, 0.26) 56.49%, rgba(79, 70, 229, 0.4) 115.91%)" }}></div>
+                <div className="absolute inset-0 m-auto max-w-xs h-[357px] blur-[118px] sm:max-w-md md:max-w-lg" style={{ background: "linear-gradient(106.89deg, rgba(192, 132, 252, 0.11) 15.73%, rgba(14, 165, 233, 0.41) 15.74%, rgba(232, 121, 249, 0.26) 56.49%, rgba(79, 70, 229, 0.4) 115.91%)" }} />
             </section>
         </div>
     );
 };
 
-export default Home;
+export default Hero;

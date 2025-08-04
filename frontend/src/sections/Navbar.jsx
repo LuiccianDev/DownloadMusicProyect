@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import MusicIcon from "../assets/MusicIconNavbar.png";
 import { useNavigate } from "react-router-dom";
+import ThemeToggle from "../components/ThemeToggle";
 
 export default function Navbar() {
     const [state, setState] = useState(false);
@@ -25,20 +26,20 @@ export default function Navbar() {
     };
 
     return (
-        <header className="sticky top-0 z-30 backdrop-blur-2xl bg-gray-950/70 shadow-md transition-all duration-300">
+        <header className="sticky top-0 z-30 backdrop-blur-2xl bg-white/70 dark:bg-gray-950/70 shadow-md transition-all duration-300">
             <nav className=" md:text-sm transition-all duration-300 bg-black/80 md:bg-transparent">
                 <div className="gap-x-6 items-center max-w-screen mx-4 sm:mx-8 md:mx-16 lg:mx-24 xl:mx-40 md:flex xl:px-20 pt-4 ">
                     {/* LOGO */}
-                    <div className="flex items-center justify-between ">
-                        <div className="flex items-center transform transition-transform duration-300 hover:scale-110 ">
+                    <div className="flex items-center justify-between">
+                        <div className="flex items-center transform transition-transform duration-300 hover:scale-110 pb-2">
                             <button onClick={() => navigate("/")} className="">
-                                <img src={MusicIcon} className="icon-white size-8 sm:size-8" alt="Music Logo" />
+                                <img src={MusicIcon} className="filter brightness-100 invert-0 dark:brightness-0 dark:invert size-7 sm:size-7 " alt="Music Logo" />
                             </button>
-                            <span className="text-white ml-2 flex flex-col text-mx sm:text-lg">
+                            <span className="text-gray-800 dark:text-white ml-2 flex flex-col text-mx sm:text-lg">
                                 LazDev <span className="text-bold text-transparent bg-clip-text bg-gradient-to-tl from-purple-600 to-pink-600 ">Music</span>
                             </span>
                         </div>
-                        <button className="menu-btn text-gray-400 hover:text-gray-300 md:hidden"
+                        <button className="menu-btn text-gray-500 dark:text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 md:hidden"
                             onClick={() => setState(!state)}
                         >
                             {state ? (
@@ -55,14 +56,16 @@ export default function Navbar() {
 
                     {/* MENÚ */}
                     <div className={`flex-1 items-center mt-8 md:mt-0 md:flex ${state ? 'block' : 'hidden md:block'} `}>
-                        <ul className="flex-1 justify-end items-center space-y-4 md:flex md:space-x-6 md:space-y-0">
+                        <ul className="flex-1 justify-end items-center space-y-4 md:flex md:space-x-6 md:space-y-0 pb-2">
+                            <li><ThemeToggle /></li>
                             {navigation.map((item, idx) => (
-                                <li key={idx} className="text-gray-300 hover:text-gray-400">
+                                <li key={idx} className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-400">
                                     <button onClick={() => navigate(item.path)} className="block">
                                         {item.title}
                                     </button>
                                 </li>
                             ))}
+                            
                             <li className="">
                                 {!isHidden && (
                                     <button
@@ -76,6 +79,7 @@ export default function Navbar() {
                                     </button>
                                 )}
                             </li>
+                            
                         </ul>
                     </div>
                 </div>

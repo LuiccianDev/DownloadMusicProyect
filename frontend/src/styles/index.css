@@ -2,9 +2,8 @@
 
 @layer base {
   body {
-    background: rgb(0, 0, 0);
+    @apply bg-white text-black dark:bg-black dark:text-white;
   }
-  
 }
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -34,53 +33,58 @@
 
 
 @layer components {
-
-  /* Estilos para el contenedor principal */
-  .download-container {
-    @apply relative flex flex-col justify-center items-center py-40 bg-gray-950 md:flex-col px-10
-  }
-  /* Estilos para el formulario */
-  .download-form {
-    @apply flex flex-col gap-4 relative z-10 p-2.5 sm:p-5;
-  }
-
-  /* Estilos para los inputs */
-  .download-input {
-    @apply w-full px-4 py-2.5 bg-gray-800/70 border border-gray-600 rounded-lg placeholder:text-gray-400 text-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200;
-  }
-
-  /* Estilos para el botón */
-  .download-button {
-    @apply w-full py-3 px-6 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold rounded-lg transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-70;
-  }
-
-  /* Estilos para el título */
-  .download-title {
-    @apply text-6xl md:text-8xl text-center pb-6 font-bold font-Bananas bg-clip-text pt-5 bg-gradient-to-r from-purple-600 to-pink-600 text-transparent;
-  }
-
-  /* Estilos para el contenedor del formulario */
-  .download-form-container {
-    @apply bg-gray-900/70 backdrop-blur-sm p-6 rounded-2xl w-full max-w-2xl relative z-10;
-  }
-
-  /* Estilos para las etiquetas */
-  .download-label {
-    @apply block text-sm font-Revalia font-medium text-gray-200;
-  }
-
-  .section-container {
-    @apply items-center max-w-screen mx-4 sm:mx-8 md:mx-16 lg:mx-24 xl:mx-40 md:flex xl:px-20
-  }
-
-  .section {
-    @apply items-center max-w-screen mx-4 sm:mx-8 md:mx-16 lg:mx-24 xl:mx-40 md:flex-col xl:px-20
+  /* Contenedores y Layout */
+  .page-container {
+    @apply min-h-fit flex flex-col items-center justify-center py-20 sm:py-40;
   }
   
+  .section-container {
+    @apply w-full max-w-5xl text-center px-5;
+  }
+
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 sm:p-8;
+  }
+
+  /* Tipografía */
+  .section-title {
+    @apply text-5xl sm:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-tl from-purple-600 to-pink-600 pb-4;
+  }
+
+  .section-subtitle {
+    @apply mt-4 text-lg md:text-xl text-gray-600 dark:text-gray-300;
+  }
+
+  /* Formularios */
+  .form-label {
+    @apply block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2;
+  }
+
+  .form-input {
+    @apply w-full p-3 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-white rounded-lg outline-none focus:ring-2 focus:ring-pink-500 transition-colors duration-200;
+  }
+
+  /* Botones */
+  .btn {
+    @apply inline-block px-6 py-3 font-semibold rounded-lg transition-transform duration-300 hover:scale-105;
+  }
+
+  .btn-primary {
+    @apply btn bg-gradient-to-r from-purple-600 to-pink-600 text-white;
+  }
+  
+  .btn-secondary {
+    @apply btn bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white;
+  }
+
+  /* Iconos */
   .icon-white {
     filter: brightness(0) invert(1);
   }
-
+  
+  .icon-dynamic {
+    @apply fill-current text-gray-800 dark:text-white;
+  }
 }
 
 
