@@ -1,9 +1,10 @@
 {
 	"files.exclude": {
-		"**/*__pycache__": true,
-		"**/*__init__.py": true,
+		"**/*__pycache__/**": true,
 		"**/*.log": true,
 		"**/*.tmp": true,
-		"**/test": true
+		"**/.venv": true,
+
+
 	}
 }

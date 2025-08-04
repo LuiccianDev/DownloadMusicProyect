@@ -1,20 +1,13 @@
 import React from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-// ✅ Estilos personalizados para cada tipo de notificación
-const toastStyles = {
-  success: "bg-green-500 text-white",
-  error: "bg-red-500 text-white",
-  warning: "bg-yellow-500 text-black",
-  info: "bg-blue-500 text-white",
-};
+import { toastConfig } from "./toastConfig.jsx";
 
 // ✅ Componente de Notificación Personalizada
 const CustomNotification = ({ closeToast, data, toastProps }) => {
   const { title, content, type } = data;
   const isColored = toastProps.theme === "colored";
-  const bgClass = toastStyles[type] || "bg-gray-700 text-white"; // ✅ Estilo por defecto
+  const bgClass = toastConfig[type] || "bg-gray-700 text-white"; // ✅ Estilo por defecto
 
   return (
     <div className={`flex flex-col w-full p-3 rounded-md ${bgClass}`}>
@@ -35,7 +28,7 @@ const CustomNotification = ({ closeToast, data, toastProps }) => {
 };
 
 // ✅ Función para disparar la notificación personalizada
-const showCustomToast = (type) => {
+export const showCustomToast = (type) => {
   toast(<CustomNotification />, {
     data: {
       title: type.toUpperCase() + " Notification",
@@ -50,7 +43,7 @@ const showCustomToast = (type) => {
 };
 
 // ✅ Componente principal con botones para probar cada tipo de notificación
-export default function CustomToastExample() {
+export default function Toast() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white">
       <ToastContainer />
@@ -73,4 +66,3 @@ export default function CustomToastExample() {
     </div>
   );
 }
-

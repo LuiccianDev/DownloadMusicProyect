@@ -1,6 +1,7 @@
 from fastapi import FastAPI
-from app.routes.download import download_router
 from fastapi.middleware.cors import CORSMiddleware
+
+from app.routes.download import download_router
 
 app = FastAPI()
 

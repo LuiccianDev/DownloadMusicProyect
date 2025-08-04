@@ -42,4 +42,6 @@ htmlcov/
 dist/
 build/
 site/
+.ruff_cache/
+.mypy_cache/
 
