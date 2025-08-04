@@ -1,8 +1,11 @@
 {
   "name": "frontend",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "description": "Interfaz web para el proyecto DownloadMusic con Vite, React 19 y TailwindCSS 4",
+  "author": "LuccianDev",
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
