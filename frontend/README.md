@@ -2,6 +2,12 @@
 
 This is the frontend for the DownloadMusic project. It is a React application that provides the user interface for downloading music.
 
+## 🖼️ Preview
+
+<div align="center">
+  <img src="./src/assets/ResultProyect.webp" alt="DownloadMusic Project Preview" width="800">
+</div>
+
 ## Features
 
 - User-friendly interface for downloading music.
@@ -12,7 +18,7 @@ This is the frontend for the DownloadMusic project. It is a React application th
 - React
 - Vite
 - JavaScript
-- CSS
+- TailwindCSS
 
 ## Getting Started
 

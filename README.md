@@ -21,12 +21,12 @@ Aplicación web full-stack que permite a los usuarios convertir y descargar vide
 
 ## 📋 Tabla de Contenidos
 
-- [✨ Características Principales](#-características-principales)
-- [🛠️ Estructura del Proyecto](#️-estructura-del-proyecto)
-- [🚀 Cómo Empezar](#-cómo-empezar)
-- [🤝 Contribuciones](#-contribuciones)
+- [Características Principales](#-características-principales)
+- [Estructura del Proyecto](#️-estructura-del-proyecto)
+- [Cómo Empezar](#-cómo-empezar)
+- [Contribuciones](#-contribuciones)
 
-## ✨ Características Principales
+## Características Principales
 
 - **Conversión Rápida:** Descarga y convierte videos de YouTube a MP3.
 - **Interfaz Moderna:** Frontend reactivo y fácil de usar construido con React y Vite.
@@ -34,14 +34,14 @@ Aplicación web full-stack que permite a los usuarios convertir y descargar vide
 - **Calidad de Código:** Formateo consistente con Black y Prettier.
 - **Gestión de Paquetes:** Dependencias manejadas con `uv` para el backend y `npm` para el frontend.
 
-## 🛠️ Estructura del Proyecto
+## Estructura del Proyecto
 
 El proyecto se divide en dos componentes principales:
 
 - **`./frontend`**: Contiene la aplicación de React que proporciona la interfaz de usuario. Para más detalles, consulta el [README de Frontend](./frontend/README.md).
 - **`./backend`**: Contiene la aplicación de FastAPI que gestiona la lógica de descarga. Para más detalles, consulta el [README de Backend](./backend/README.md).
 
-## 🚀 Cómo Empezar
+## Cómo Empezar
 
 Para ejecutar este proyecto, necesitarás tener Node.js y Python (con `uv`) instalados.
 
@@ -58,8 +58,10 @@ Para ejecutar este proyecto, necesitarás tener Node.js y Python (con `uv`) inst
 3.  Instala las dependencias: `uv pip install -r requirements.txt`.
 4.  Inicia el servidor: `uvicorn app.main:app --reload`.
 
-
-
-## 🤝 Contribuciones
+## Contribuciones
 
 ¡Las contribuciones son bienvenidas! Por favor, abre un issue o envía un pull request con tus cambios.
+
+## Licencia
+
+Este proyecto está licenciado bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
